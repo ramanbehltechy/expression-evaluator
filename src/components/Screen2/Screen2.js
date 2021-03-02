@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import AddButton from '../Button/Button';
 import InputBox from '../InputBox/InputBox';
 import OperandSelector from '../OperandSelector/OperandSelector';
+import Grid from '@material-ui/core/Grid';
 
 class Screen2 extends Component {
   constructor(props) {
@@ -19,11 +20,18 @@ class Screen2 extends Component {
   }
   render(){
   return(
-    <div>
-      <OperandSelector onSelectChange={this.onChange}/>
-      <InputBox onInputChange={this.onInputChange}/>
-      <AddButton title="Add Operation" handler = {this.handler}/>
-    </div>
+    <Grid container spacing={0}>
+      <Grid item xs={4}>
+          <OperandSelector onSelectChange={this.onChange}/>
+        </Grid>
+        <Grid item xs={3}>
+            <InputBox onInputChange={this.onInputChange}/>
+        </Grid>
+     
+        <Grid item xs={3}>
+          <AddButton title="Add Operation" handler = {this.handler}/>
+        </Grid>
+    </Grid>
     )
   }
   };

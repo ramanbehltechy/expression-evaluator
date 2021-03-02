@@ -20,18 +20,22 @@ class App extends Component {
   }
 
   handleClick = (val) =>{
-    debugger;
+      if(val=='')
+      {
+        return;
+      }
       this.setState({screen1:false,screen2:true,number:val});
   }
   inputChange = (val) =>{
-    debugger;
       this.setState({operand:(eval(this.state.number + this.state.operator +val ))});
   }
   changeVal = (val) =>{
     this.setState({operator:val})
   }
   operationClick = () =>{
-    debugger;
+    if(this.state.operand=='' && this.state.operator==''){
+      return;
+    }
     this.setState({screen3:true,result:eval(this.state.number + this.state.operator + this.state.operand)});
   }
   render() {

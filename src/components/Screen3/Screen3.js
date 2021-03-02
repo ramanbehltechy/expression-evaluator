@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import { Box } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import styles from './Screen3.module.css';
 
 class Screen3 extends Component{
@@ -8,7 +9,8 @@ class Screen3 extends Component{
   }
   render(){
     return(
-      <div className={styles.mainContainer}>
+      <div style={{textAlign: "center"}}>
+      <Grid container spacing={0}>
       <Box>
         {this.props.box1}
       </Box>
@@ -22,8 +24,8 @@ class Screen3 extends Component{
       <Box>
         {this.props.box4}
       </Box>
+  </Grid>
   </div>
-
     )
   }
 };
